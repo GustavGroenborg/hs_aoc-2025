@@ -1,13 +1,12 @@
 module Util where
 
-basePath :: String
-basePath         = "/Users/gustavgronborg/AdventOfCode/aoc_2025/"
+import System.Environment
 
 exampleInputPath :: String
-exampleInputPath = basePath ++ "exampleInputs/"
+exampleInputPath = "exampleInputs/"
 
 puzzleInputPath :: String
-puzzleInputPath  = basePath ++ "puzzleInputs/"
+puzzleInputPath  = "puzzleInputs/"
 
 getExampleInput :: String -> IO [String]
 getExampleInput str = getInput $ exampleInputPath ++ str
@@ -17,5 +16,6 @@ getPuzzleInput str = getInput $ puzzleInputPath ++ str
 
 getInput :: String -> IO [String]
 getInput path = do
-    content <- readFile $ path
+    aocPath <- getEnv "AOC_PATH"
+    content <- readFile $ aocPath ++ "/" ++ path
     return $ lines content
