@@ -8,7 +8,7 @@ data Dial = Dial
 
 data Instruction = Instruction 
     { direction :: Char
-    , rotations    :: Int
+    , rotations :: Int
     } deriving (Show)
 
 turnRight :: Dial -> Dial
