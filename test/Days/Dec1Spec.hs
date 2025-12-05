@@ -7,9 +7,6 @@ import Util
 dial :: Dial
 dial = Dial 50 0 0
 
-puzzleInput :: IO [String]
-puzzleInput = getPuzzleInput "dec1pt1.txt"
-
 spec :: Spec
 spec = do
     describe "doInstruction" $ do
